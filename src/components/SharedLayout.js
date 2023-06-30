@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const SharedLayout = () => {
   const stylesEl = ({ isActive }) => {
-    return { backgroundColor: isActive ? "pink" : "aquamarine", marginLeft: '20px' }
+    return { backgroundColor: isActive ? "yellow" : "aquamarine", marginLeft: '20px' }
 }
 return <div>
           <header>

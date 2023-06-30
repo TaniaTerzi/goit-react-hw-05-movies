@@ -38,7 +38,7 @@ export const MovieDetails = () => {
 
     const year = date.substring(0, 4);
 
-    return <main>
+    return <main style={{width: '1200px'}}>
         <h2>{movie.title} ({year})</h2>
         <img
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}

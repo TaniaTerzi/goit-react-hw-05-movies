@@ -28,11 +28,12 @@ export const Cast = () => {
         getMovies();
     }, [id]);
    
-    return <div >
+    return <div style={{display: 'flex', flexWrap: 'wrap',  gap: '10px'}} >
     {movie.map(item => {
         return <div key={item.id}>
-        <p>{item.name}</p>
-        <img src={`https://image.tmdb.org/t/p/original${item.profile_path}`} alt="" width={150}/></div>
+            <img src={`https://image.tmdb.org/t/p/original${item.profile_path}`} alt="" width={150}/>
+            <p>{item.name}</p>
+        </div>
     })}
     </div>
 } ;
