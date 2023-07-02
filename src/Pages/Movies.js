@@ -1,10 +1,11 @@
+import React from 'react';
 import axios from "axios";
 import {useState, useEffect} from 'react';
 import {Link, useSearchParams} from "react-router-dom";
 
 
 
-export const Movies = () => {
+function Movies() {
     const [movie, setMovie] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
@@ -79,3 +80,5 @@ export const Movies = () => {
       </div>
     </div>
 } 
+
+export default Movies;

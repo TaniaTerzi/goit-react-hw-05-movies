@@ -2,7 +2,7 @@ import axios from "axios";
 import {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
 
-export const Home = () => {
+function Home() {
     const [movies, setMovie] = useState([])
     useEffect(()=> {
     async function getMovies() {
@@ -38,4 +38,6 @@ export const Home = () => {
             })}
         </ul> 
     </main>
-} ;
+}
+
+export default Home;

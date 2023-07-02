@@ -14,18 +14,27 @@
 //     </div>
 //   );
 // };
-
-
+import React from 'react';
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import SharedLayout from "./SharedLayout";
-import { Home } from "../Pages/Home";
-import { Movies } from "../Pages/Movies";
-import { MovieDetails } from "Pages/MovieDetails";
-import { Cast } from "./Cast";
-import { Reviews } from "./Reviews";
 
-export const App = () => {
+const Home = lazy(() => import("../Pages/Home"));
+const Movies = lazy(() => import("../Pages/Movies"));
+const MovieDetails = lazy(() => import("../Pages/MovieDetails"));
+const Cast = lazy(() => import("./Cast"));
+const Reviews = lazy(() => import("./Reviews"));
+
+
+// import Home from "../Pages/Home";
+// import Movies from "../Pages/Movies";
+// import MovieDetails from "Pages/MovieDetails";
+// import Cast from "./Cast";
+// import Reviews from "./Reviews";
+
+ function App() {
   return (
+   
       <Routes>
         <Route path="/" element={<SharedLayout />} >
           <Route index element={<Home />} />        
@@ -37,6 +46,8 @@ export const App = () => {
           <Route path="*" index element={<Home />} />
         </Route>
       </Routes>
-    
+  
   );
-};
+}
+
+export default App;

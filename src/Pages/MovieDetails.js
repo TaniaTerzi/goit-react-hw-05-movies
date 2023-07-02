@@ -3,7 +3,7 @@ import axios from "axios";
 import {useState, useEffect } from 'react';
 import {Link, Outlet, useParams} from "react-router-dom";
 
-export const MovieDetails = () => {
+function MovieDetails() {
     const [movie, setMovie] = useState([]);
     const [genre, setGenre] = useState([]);
     const [date, setDate] = useState('');
@@ -67,4 +67,6 @@ export const MovieDetails = () => {
         </ul>
         <Outlet/>
     </main>
-} ;
+}
+
+export default MovieDetails;
