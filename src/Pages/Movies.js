@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import {useState, useEffect} from 'react';
-import {Link, useSearchParams} from "react-router-dom";
+import {Link, useSearchParams, useLocation } from "react-router-dom";
 
 
 
@@ -12,6 +12,9 @@ function Movies() {
 
     const query = searchParams.get('query') ?? '';
 
+    const location = useLocation();
+    console.log(location.state);
+    
 
     const handleChange = event => {
         const { value } = event.currentTarget;
@@ -54,6 +57,11 @@ function Movies() {
 
 
     return <div>
+
+        {/* <Link to="/product/h-1" state={{ from: location }}>
+          Navigate to product h-1
+        </Link>  */}
+
         <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -69,7 +77,7 @@ function Movies() {
                 <Link
                     
                 to={`${item.id}`}
-                //   state={{ from: location }}
+                  state={{ from: location }}
                 >
                 {item.title}
             </Link>s 

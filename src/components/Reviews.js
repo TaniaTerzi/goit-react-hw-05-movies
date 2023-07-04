@@ -10,6 +10,7 @@ function Reviews() {
     const id = idParams.movieId;
     console.log(id);
 
+   
     useEffect(()=> {
     async function getMovies() {
         try {

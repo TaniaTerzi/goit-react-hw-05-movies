@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import {useState, useEffect } from 'react';
-import {Link, Outlet, useParams} from "react-router-dom";
+import {Link, Outlet, useParams, useLocation } from "react-router-dom";
 
 function MovieDetails() {
     const [movie, setMovie] = useState([]);
@@ -9,6 +9,9 @@ function MovieDetails() {
     const [date, setDate] = useState('');
 
        
+    const location = useLocation();
+    const backLinkHref = location.state?.from ?? "/";
+
     const idParams = useParams();
     const id = idParams.movieId;
     console.log(id);
@@ -39,6 +42,9 @@ function MovieDetails() {
     const year = date.substring(0, 4);
 
     return <main style={{width: '1200px'}}>
+
+         <Link to={backLinkHref}>Go back</Link>
+
         <h2>{movie.title} ({year})</h2>
         <img
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
